@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Text } from "react-native";
 import styled from "styled-components/native";
 import { Entypo } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
 
 const Container = styled.View`
   flex: 1;
@@ -45,32 +41,10 @@ const Seperator = styled.View`
   margin: 10px;
 `;
 
-const IconsContainer = styled.View`
-  width: 80%;
-  margin-top: 10px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const IconContainer = styled.TouchableOpacity`
-  flex-direction: row;
-  align-items: center;
-`;
-
-const CounterText = styled.Text`
-  margin-left: 5px;
-  color: gray;
-`;
-
 const PostScreen = ({ route }) => {
   const { item } = route.params;
-  const [liked, setLiked] = useState(false);
-  const [likeCounter, setLikeCounter] = useState(item.likes);
-  const handleLike = () => {
-    setLikeCounter(liked ? likeCounter - 1 : likeCounter + 1);
-    setLiked(!liked);
-  };
+
+  console.log(item);
   return (
     <Container>
       <UserInfo>
@@ -105,30 +79,9 @@ const PostScreen = ({ route }) => {
       </PostInfo>
       <Seperator />
       <PostInfo>
-        <Text style={{ fontWeight: "bold" }}>{likeCounter}</Text>
-        <Text style={{ color: "gray", marginLeft: 5 }}>Likes</Text>
+        <Text style={{ fontWeight: "bold" }}>28</Text>
+        <Text style={{ color: "gray", marginLeft: 10 }}>Likes</Text>
       </PostInfo>
-      <Seperator />
-      <IconsContainer>
-            <IconContainer>
-              <FontAwesome name="comment-o" size={20} color="gray" />
-            </IconContainer>
-            <IconContainer>
-              <MaterialCommunityIcons
-                name="twitter-retweet"
-                size={23}
-                color="gray"
-              />
-            </IconContainer>
-            <IconContainer onPress={handleLike}>
-              {liked ? (
-                <AntDesign name="heart" size={20} color="red" />
-              ) : (
-                <AntDesign name="hearto" size={20} color="gray" />
-              )}
-            </IconContainer>
-            <Feather name="share-2" size={20} color="gray" />
-          </IconsContainer>
       <Seperator />
     </Container>
   );

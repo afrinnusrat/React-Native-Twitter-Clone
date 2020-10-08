@@ -105,13 +105,14 @@ const PostScreen = ({ route }) => {
       </PostInfo>
       <Seperator />
       <PostInfo>
-        <Text style={{ fontWeight: "bold" }}>{likeCounter}</Text>
+        <Text style={{ fontWeight: "bold" }}>28</Text>
         <Text style={{ color: "gray", marginLeft: 5 }}>Likes</Text>
       </PostInfo>
       <Seperator />
       <IconsContainer>
             <IconContainer>
-              <FontAwesome name="comment-o" size={20} color="gray" />
+              <FontAwesome name="comment-o" size={18} color="gray" />
+              <CounterText>{item.comments}</CounterText>
             </IconContainer>
             <IconContainer>
               <MaterialCommunityIcons
@@ -119,15 +120,18 @@ const PostScreen = ({ route }) => {
                 size={23}
                 color="gray"
               />
+              <CounterText>{item.retweets}</CounterText>
             </IconContainer>
             <IconContainer onPress={handleLike}>
               {liked ? (
-                <AntDesign name="heart" size={20} color="red" />
+                <AntDesign name="heart" size={18} color="red" />
               ) : (
-                <AntDesign name="hearto" size={20} color="gray" />
+                <AntDesign name="hearto" size={18} color="gray" />
               )}
+
+              <CounterText>{likeCounter}</CounterText>
             </IconContainer>
-            <Feather name="share-2" size={20} color="gray" />
+            <Feather name="share-2" size={18} color="gray" />
           </IconsContainer>
       <Seperator />
     </Container>

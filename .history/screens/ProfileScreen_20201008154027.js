@@ -1,11 +1,11 @@
 import React from "react";
-import styled from "styled-components/native";
 import { postArray } from "../utils/DummyData";
 import Feed from "../components/Feed";
 import ProfileCover from "../components/ProfileCover";
 
 const Container = styled.View`
   flex: 1;
+  padding: 10px;
   background-color: white;
 `;
 

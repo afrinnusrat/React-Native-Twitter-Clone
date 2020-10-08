@@ -9,7 +9,7 @@ import { format } from "timeago.js";
 
 const Container = styled.View`
   flex-direction: row;
-  margin: 10px;
+  margin:10px
 `;
 
 const ProfilePicture = styled.Image`
@@ -29,9 +29,9 @@ const PostInfo = styled.View`
 `;
 
 const DisplayName = styled.Text`
-  font-weight: bold;
-  font-size: 16px;
-  margin-right: 5px;
+    font-weight:bold
+    font-size:16px;
+    margin-right:5px
 `;
 
 const InfoText = styled.Text`
@@ -39,7 +39,7 @@ const InfoText = styled.Text`
 `;
 
 const Desc = styled.Text`
-  font-size: 14.5px;
+  font-size: 15px;
 `;
 
 const Photo = styled.Image`
@@ -87,20 +87,12 @@ const Tweet = ({ item, navigation }) => {
         <ProfilePicture source={{ uri: item.user.profilePicture }} />
         <PostContainer>
           <PostInfo>
-            <DisplayName
-              onPress={() =>
-                navigation.navigate("Profile", { user: item.user })
-              }
-            >
-              {item.user.displayName}
-            </DisplayName>
+            <DisplayName onPress={()=>navigation.navigate("Profile", {user:item.user})}>{item.user.displayName}</DisplayName>
             <InfoText>@{item.user.username}</InfoText>
             <Entypo name="dot-single" size={15} color="gray" />
             <InfoText>{format(item.date)}</InfoText>
           </PostInfo>
-          <Desc onPress={() => navigation.navigate("Post", { item })}>
-            {item.desc}
-          </Desc>
+          <Desc>{item.desc}</Desc>
           {item.photo && <Photo source={{ uri: item.photo }} />}
           <IconsContainer>
             <IconContainer>

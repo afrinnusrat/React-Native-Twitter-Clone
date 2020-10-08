@@ -14,6 +14,7 @@ const ProfileScreen = ({ route, navigation }) => {
   return (
     <Container>
       <Feed
+        style={{ padding: 10 }}
         posts={postArray}
         headerComponent={<ProfileCover user={user} />}
         navigation={navigation}

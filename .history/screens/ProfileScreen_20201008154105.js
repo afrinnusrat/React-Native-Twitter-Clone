@@ -6,6 +6,7 @@ import ProfileCover from "../components/ProfileCover";
 
 const Container = styled.View`
   flex: 1;
+  padding: 0px 10px 10px 10px;
   background-color: white;
 `;
 

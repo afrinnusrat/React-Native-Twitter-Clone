@@ -6,6 +6,7 @@ import NewTweetButton from "../components/NewTweetButton";
 
 const Container = styled.View`
   flex: 1;
+  padding: 10px;
   background-color: white;
 `;
 
