@@ -1,4 +1,4 @@
-Twitter clone application with React.js (dummy data and redux)
+Twitter clone application with React native (dummy data and redux)
 
 ![Twitter](https://github.com/safak/React-Native-Twitter-Clone/blob/master/react-native-twitter.gif)
 
